@@ -1,7 +1,7 @@
-import logo from '../assets/logo.png';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from "../assets/logo2.png";
 
 function Navbar({onOpenMagazine}) {
 
@@ -34,9 +34,8 @@ function Navbar({onOpenMagazine}) {
 
     return (
         <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
-            <img src={logo} alt="" className ="nav-logo"/>
             <div className="nav-container">
-                <div className='logo'>Daniel <span>.dev</span></div>
+                <div className='logo'><img src={logo} alt="" className ="nav-logo"/>Daniel <span>.dev</span></div>
 
                 <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? <X size={30} /> : <Menu size={30} />}

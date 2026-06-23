@@ -25,13 +25,18 @@
 }
 
 .nav-logo {
-  display: none;
+  width: 60px;
+  height: 40px;
+  justify-content: center;
+  margin: 5px;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 900;
   letter-spacing: -1px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
