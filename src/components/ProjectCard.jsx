@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import './Projects.css';
+
+const MySwal = withReactContent(Swal);
 
 function ProjectCard({ imgPrin, titulo, descripcion, tags, link, imagenes = [] }) {
 
@@ -22,6 +26,20 @@ function ProjectCard({ imgPrin, titulo, descripcion, tags, link, imagenes = [] }
         }
     }, [onOpenCard]);
 
+    const mostrarAlertaDesarrollo = () => {
+        MySwal.fire({
+            title: <strong style={{ color: '#fff' }}>¡Proyecto en Desarrollo!</strong>,
+            html: <p style={{ color: '#ccc' }}>Este proyecto continúa en desarrollo activo por el momento. ¡Pronto estará listo! 🚀</p>,
+            icon: 'info',
+            background: '#1e1e24',
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#3085d6',
+            customClass: {
+                popup: 'border-radius-custom'
+            }
+        })
+    }
+
     return (
         <>
             <div className="project-card">
@@ -36,7 +54,18 @@ function ProjectCard({ imgPrin, titulo, descripcion, tags, link, imagenes = [] }
                             <span key={index} className="tag">{tag}</span>
                         ))}
                     </div>
-                    <button className="btn-proyect" onClick={() => setOnOpenCard(true)}>Ver Proyecto →</button>
+                    <button 
+                        className="btn-proyect" 
+                        onClick={() => {
+                            if (!imagenes || imagenes.length === 0 || imagenes === "") {
+                                mostrarAlertaDesarrollo();
+                            } else {
+                                setOnOpenCard(true);
+                            }
+                        }}
+                    >
+                        Ver Proyecto →
+                    </button>
                 </div>
             </div>
             {onOpenCard && (

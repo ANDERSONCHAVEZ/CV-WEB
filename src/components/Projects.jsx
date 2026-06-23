@@ -45,6 +45,14 @@ function Projects() {
             imagenes: listaImagenesNavi
         },
         {
+            imgPrin: Talent,
+            titulo: "TalentMarket Certus",
+            descripcion: "Tienda online donde los alumnos de distintas carreras pueden subir sus proyectos y venderlos de manera segura.",
+            tags: ["Java", "Spring Boot", "MySQL"],
+            link: "#",
+            imagenes: listaImagenesTalent
+        },
+        {
             imgPrin: "",
             titulo: "Stockmaster",
             descripcion: "Software diseñado para almacenes grandes y pequeños ayudando a la automatizacion de procesos y monitoreo del almacén.",
@@ -52,14 +60,6 @@ function Projects() {
             link: "#",
             imagenes: ""
         },
-        {
-            imgPrin: Talent,
-            titulo: "TalentMarket Certus",
-            descripcion: "Tienda online donde los alumnos de distintas carreras pueden subir sus proyectos y venderlos de manera segura.",
-            tags: ["Java", "Spring Boot", "MySQL"],
-            link: "#",
-            imagenes: listaImagenesTalent
-        }
 
     ];
 

@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import hero2 from '../assets/hero2.png';
 import './Hero.css';
 
 function Hero() {
@@ -37,13 +38,13 @@ function Hero() {
                 </h2>
                 <p>Transformando ideas en código. Especialista en Java y Python.</p>
                 <div className="hero-buttons">
-                    <button className="btn-primary">Contratar</button>
-                    <button className="btn-secondary">Saber más</button>
+                    <a href="https://wa.me/953031367" className="btn-primary" target="_blank" rel="noopener noreferrer">Contratar</a>
+                    <a href="#about%20me" className="btn-secondary">Saber más</a>
                 </div>
             </div>
             <div className="hero-image">
                 <div className="card-placeholder">
-
+                    <img src={hero2} alt="" />
                 </div>
             </div>
         </section>
