@@ -1,0 +1,157 @@
+.gafete-scene {
+  display: flex;
+  width: 300px;
+  height: 450px;
+  perspective: 1000px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 50px auto;
+}
+
+.cordon {
+  width: 12px;
+  height: 100px;
+  background: #333;
+  border-radius: 6px;
+  position: relative;
+  z-index: 5;
+  box-shadow: inset 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.gancho {
+  width: 24px;
+  height: 24px;
+  background: #aaa;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: -6px;
+  border: 4px solid #888;
+}
+
+.gafete-card {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.gafete-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.gafete-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.face-front {
+  background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+}
+
+.gafete-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.chip {
+  width: 40px;
+  height: 30px;
+  background: #e5c05b;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(0,0,0,0.1) 50%);
+  background-size: 10px;
+}
+
+.gafete-body {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.gafete-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.gafete-body h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #333;
+}
+
+.badge-type {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 15px;
+  background: #ff4757;
+  color: white;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.face-back {
+  background: #f1f1f1;
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-container {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.serial {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  font-size: 0.6rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+@keyframes balanceo {
+  0% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+  100% { transform: rotate(1deg); }
+}
+
+.gafete-scene {
+  animation: balanceo 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@media (max-width: 1040px) {
+  .gafete-face {
+    transform: scale(0.8);
+    margin-top: -50px;
+  }
+  .cordon {
+    transform: scale(0.8);
+  }
+}

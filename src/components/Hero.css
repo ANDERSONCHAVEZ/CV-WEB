@@ -1,0 +1,75 @@
+.hero{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 100px 10%;
+    min-height: 80vh;
+    gap: 40px;
+}
+
+.hero-info h1{
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.name{
+    color: var(--primary);
+}
+
+.typewriter{
+    font-size: 2rem;
+    color: #666;
+    min-height: 3rem;
+}
+
+.cursor{
+    color: var(--primary);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {opacity: 0;}
+}
+
+.hero-buttons{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #eee;
+    transition: all 0.3 s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.card-placeholder{
+    width: 350px;
+    height: 350px;
+    background: #eee;
+    border-radius: 40px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+@media (max-width: 768px) {
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}

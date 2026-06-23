@@ -1,0 +1,151 @@
+.skills-section {
+    height: 100vh;
+    background: #0000002d;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    width: 50%;
+    height: 100%;
+    padding: 80px 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.skills-title {
+    font-size: 3rem;
+    text-align: center;
+    color: #000;
+    font-weight: 800;
+}
+
+
+.skills-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; height: 200px;
+    background: rgba(0, 195, 255, 0.578);
+    filter: blur(100px); /* Resplandor de fondo de la imagen */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.skills-wrapper:active {
+    cursor: grabbing;
+}
+
+.skills-canvas {
+    background: #00000085;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.skills-information {
+    flex: 1;
+    max-width: 500px;
+}
+
+.stack-filters {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stack-filters button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stack-filters button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.skill-detail-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    width: 250px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+}
+
+.skill-detail-card button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.skill-detail-card button:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.currently-learning {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+.progress-barra {
+    width: 100%;
+    height: 6px;
+    background: #ccc;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.progress-fill {
+    width: 60%;
+    height: 100%;
+    background: #007bff;
+    animation: pulse 2s infinite;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@keyframes fadeIn {from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);}}
+
+@media (max-width: 700px) {
+    .skills-section {
+        flex-direction: column-reverse;
+        padding: 60px 20px 0px 20px;
+
+    }
+
+    .skills-wrapper {
+        width: 90%;
+    }
+}
