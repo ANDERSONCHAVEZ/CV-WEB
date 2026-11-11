@@ -38,9 +38,9 @@ function Contact({onOpenMagazine}) {
                     <p>¿Tienes una idea en mente? <br /> Envíame un mensaje:</p>
                     <a href="mailto:achavezrodrigez7@gmail.com" className = "footer-mail">achavezrodrigez7@gmail.com</a>
                     <div className="footer-socials">
-                        <a href="#">LinkedIn</a>
-                        <a href="https://github.com/ANDERSONCHAVEZ">GitHub</a>
-                        <a href="https://wa.me/953031367">WhatsApp</a>
+                        <a href="https://www.linkedin.com/in/anderson-chavez-rodrigez-a94928292/" target='_blank'>LinkedIn</a>
+                        <a href="https://github.com/ANDERSONCHAVEZ" target='_blank'>GitHub</a>
+                        <a href="https://wa.me/953031367" target='_blank'>WhatsApp</a>
                     </div>
                 </div>
             </div>
