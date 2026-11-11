@@ -254,7 +254,33 @@
 }
 
 @media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-image-placeholder {
+        height: 190px;
+    }
+
+    .project-expanded-content {
+        width: 90%;
+        max-height: 90%;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
     .project-modal-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
-}
+} 

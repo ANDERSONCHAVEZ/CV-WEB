@@ -1,41 +1,37 @@
 .skills-section {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background: #0000002d;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    gap: 60px;
+    gap: 40px;
+    padding: 80px 5%;
+    box-sizing: border-box;
 }
 
 .skills-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
     width: 50%;
-    height: 100%;
-    padding: 80px 15px;
+    height: 520px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     cursor: grab;
 }
-
-.skills-title {
-    font-size: 3rem;
-    text-align: center;
-    color: #000;
-    font-weight: 800;
-}
-
 
 .skills-wrapper::after {
     content: '';
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px; height: 200px;
-    background: rgba(0, 195, 255, 0.578);
-    filter: blur(100px); /* Resplandor de fondo de la imagen */
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 195, 255, 0.5);
+    filter: blur(100px);
     pointer-events: none;
     z-index: 0;
 }
@@ -45,9 +41,11 @@
 }
 
 .skills-canvas {
+    width: 100% !important;
+    height: 100% !important;
     background: #00000085;
     z-index: 1;
-    border-radius: 30px;
+    border-radius: 24px;
 }
 
 .skills-information {
@@ -55,11 +53,17 @@
     max-width: 500px;
 }
 
+.skills-title {
+    font-size: 2.8rem;
+    color: #111;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
 .stack-filters {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     flex-wrap: wrap;
 }
 
@@ -69,7 +73,8 @@
     border: 1px solid #ccc;
     background: white;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: all 0.25s ease;
 }
 
 .stack-filters button.active {
@@ -78,74 +83,189 @@
     border-color: #007bff;
 }
 
+.skills-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
 .skill-detail-card {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px);
-    width: 250px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    width: 240px;
     z-index: 10;
     animation: fadeIn 0.3s ease;
 }
 
-.skill-detail-card button {
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.skill-detail-card button:hover {
-    background: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
-.currently-learning {
-    margin-top: 30px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-}
-
-.progress-barra {
-    width: 100%;
-    height: 6px;
-    background: #ccc;
-    border-radius: 3px;
-    margin-top: 8px;
-}
-
-.progress-fill {
-    width: 60%;
-    height: 100%;
-    background: #007bff;
-    animation: pulse 2s infinite;
+.skill-detail-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #111;
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
 }
 
+.card-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    color: #666;
+}
 
-@keyframes fadeIn {from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);}}
+.skill-detail-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+    margin: 0 0 10px 0;
+}
 
-@media (max-width: 700px) {
+.card-footer small {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.currently-learning {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.currently-learning h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+}
+
+.learning-item span {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.progress-barra {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 65%;
+    height: 100%;
+    background: #007bff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1040px) {
     .skills-section {
-        flex-direction: column-reverse;
-        padding: 60px 20px 0px 20px;
-
+        padding: 80px 24px;
+        gap: 30px;
     }
 
     .skills-wrapper {
-        width: 90%;
+        width: 48%;
+        height: 460px;
+    }
+
+    .skills-title {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        flex-direction: column-reverse;
+        padding: 70px 20px 40px 20px;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .skills-information {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stack-filters {
+        justify-content: center;
+    }
+
+    .skills-wrapper {
+        width: 100%;
+        max-width: 420px;
+        height: 380px;
+    }
+
+    .skill-detail-card {
+        left: 50%;
+        bottom: 12px;
+        transform: translateX(-50%);
+        width: 85%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 50px 15px 30px 15px;
+    }
+
+    .skills-title {
+        font-size: 2rem;
+    }
+
+    .skills-desc {
+        font-size: 0.92rem;
+    }
+
+    .stack-filters button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .skills-wrapper {
+        width: 100%;
+        height: 320px;
+        border-radius: 18px;
+    }
+
+    .skills-canvas {
+        border-radius: 18px;
+    }
+
+    .currently-learning {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
     }
 }

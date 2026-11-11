@@ -147,11 +147,15 @@
 }
 
 @media (max-width: 1040px) {
-  .gafete-face {
-    transform: scale(0.8);
-    margin-top: -50px;
+.gafete-scene {
+    transform: scale(0.85);
+    margin: 10px auto;
   }
-  .cordon {
-    transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+  .gafete-scene {
+    transform: scale(0.78);
+    margin: 0 auto 30px auto;
   }
 }

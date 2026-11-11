@@ -1,24 +1,23 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import hero2 from '../assets/hero2.png';
 import './Hero.css';
 
 function Hero() {
-
-    const frases = ["Desarrollador de Software", "Especialista en IA", "Desarrollador fullstack"]
-    const [index, setIndex] = useState (0);
+    const frases = ["Desarrollador de Software", "Especialista en IA", "Desarrollador fullstack"];
+    const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
 
     useEffect(() => {
-        if(subIndex === frases[index].length + 1 && !reverse) {
-            setTimeout(() => setReverse(true), 2000);
-            return;
+        if (subIndex === frases[index].length + 1 && !reverse) {
+            const timeout = setTimeout(() => setReverse(true), 2000);
+            return () => clearTimeout(timeout);
         }
 
-        if(subIndex === 0 && reverse) {
-            setReverse(false)
+        if (subIndex === 0 && reverse) {
+            setReverse(false);
             setIndex((prev) => (prev + 1) % frases.length);
-            return
+            return;
         }
 
         const timeout = setTimeout(() => {
@@ -26,25 +25,32 @@ function Hero() {
         }, reverse ? 75 : 150);
 
         return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse]);
+    }, [subIndex, index, reverse, frases]);
 
     return (
         <section className="hero" id="inicio">
             <div className="hero-info">
-                <h1>Hola, soy <span className="name"> Anderson Daniel</span></h1>
+                <h1>Hola, soy <span className="name">Anderson Daniel</span></h1>
                 <h2 className="typewriter">
                     {frases[index].substring(0, subIndex)}
                     <span className="cursor">|</span>
                 </h2>
                 <p>Transformando ideas en código. Especialista en Java y Python.</p>
                 <div className="hero-buttons">
-                    <a href="https://wa.me/953031367" className="btn-primary" target="_blank" rel="noopener noreferrer">Contratar</a>
-                    <a href="#about%20me" className="btn-secondary">Saber más</a>
+                    <a 
+                        href="https://wa.me/953031367" 
+                        className="btn-primary" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Contratar
+                    </a>
+                    <a href="#about-me" className="btn-secondary">Saber más</a>
                 </div>
             </div>
             <div className="hero-image">
                 <div className="card-placeholder">
-                    <img src={hero2} alt="" />
+                    <img src={hero2} alt="Anderson Daniel - Ilustración de perfil" />
                 </div>
             </div>
         </section>

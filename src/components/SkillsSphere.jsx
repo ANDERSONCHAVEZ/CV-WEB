@@ -127,9 +127,12 @@ export default function SkillsSphere() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const dynamicMaxDistance = windowWidth >= 1000 ? 12 : 14;
-  const dynamicMinDistance = windowWidth >= 1000 ? 7 : 9;
-  const dynamicMinCamera = windowWidth >= 1000 ? 9 : 12;
+  const isMobile = windowWidth <= 480;
+  const isTablet = windowWidth <= 1040;
+
+  const dynamicMaxDistance = isMobile ? 8.5 : isTablet ? 10 : 9 ; 
+  const dynamicMinDistance = isMobile ? 6.5 : isTablet ? 7.5 : 7 ;
+  const dynamicMinCamera = isMobile ? 11 : isTablet ? 12 : 12 ;
 
   return (
     <div className="skills-section">
@@ -144,7 +147,6 @@ export default function SkillsSphere() {
         <Canvas
           className='skills-canvas'
           camera={{ position: [0, 0, dynamicMinCamera], fov: 30 }}
-          style={{ width: '90%', height: '70vh' }}
           shadows
         >
           <ambientLight intensity={0.5} />

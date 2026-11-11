@@ -8,7 +8,6 @@ function Gafete() {
 
   return (
     <div className="gafete-scene">
-      {/* El Cordón */}
       <div className="cordon">
         <div className="gancho"></div>
       </div>
@@ -36,7 +35,6 @@ function Gafete() {
           </div>
         </div>
 
-        {/* PARTE TRASERA */}
         <div className="gafete-face face-back">
           <div className="gafete-back-content">
             <h4>Registro de Seguridad</h4>

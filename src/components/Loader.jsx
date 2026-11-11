@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import './Loader.css';
 import logo from '../assets/logo.png';
-import cube from '../assets/cube.png';
 import cube2 from '../assets/cube2.png';
 
-function Loader({onFinished}) {
-
+function Loader({ onFinished }) {
     const [percentage, setPercentage] = useState(0);
     const [statusText, setStatusText] = useState('Iniciando...');
 
@@ -21,7 +19,7 @@ function Loader({onFinished}) {
 
                 if (next >= 100) {
                     clearInterval(timer);
-                    setTimeout(() => onFinished(true), 4000);
+                    setTimeout(() => onFinished(true), 1200); // 1.2s es ideal para que no demore de más
                     return 100;
                 }
                 return next;
@@ -37,14 +35,14 @@ function Loader({onFinished}) {
                 <h1 className="welcome-msg">{statusText}</h1>
                 <div className="loader-brand">
                     <div className="loader-visual">
-                        <img src={logo} alt="" className="loader-img" />
-                        <img src={cube2} alt="" className="cube-img" />
+                        <img src={logo} alt="Anderson Daniel Logo" className="loader-img" />
+                        <img src={cube2} alt="Decoración de fondo 3D" className="cube-img" />
                     </div>
                 </div>
                 <div className="progress-wrapper">
                     <div 
                         className="progress-bar"
-                        style={{width: `${percentage}%`}}   
+                        style={{ width: `${percentage}%` }}   
                     ></div>
                 </div>
                 <div className="percentage-text">
